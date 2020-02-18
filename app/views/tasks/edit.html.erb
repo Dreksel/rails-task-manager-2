@@ -1,0 +1,22 @@
+<h2>Task editor</h2>
+
+<%= form_for @task do |t| %>
+  <div>
+    <%= t.label :title %><br />
+    <%= t.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div>
+      <%= t.label :details %><br />
+      <%= t.text_field :details %>
+  </div>
+
+  <div>
+      <%= t.label :completed %>:
+     <%= t.check_box :completed, :as => :boolean, input_html: {checked: false} %>
+  </div>
+
+  <div>
+    <%= t.submit %>
+  </div>
+<% end %>

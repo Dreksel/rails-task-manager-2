@@ -1,0 +1,19 @@
+<h2>New task</h2>
+
+<%= form_for @task do |t| %>
+  <div>
+    <%= t.label :title %><br />
+    <%= t.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div>
+    <% if !@task.persisted? %>
+      <%= t.label :details %><br />
+      <%= t.text_field :details %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= t.submit %>
+  </div>
+<% end %>
